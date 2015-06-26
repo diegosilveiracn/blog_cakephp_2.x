@@ -1,16 +1,11 @@
-<div class="users form">
-	<?php echo $this->Form->create('User');?>
+<h1>Add User</h1>
 
-    	<fieldset>
-        	<legend><?php echo __('Add User'); ?></legend>
-        	<?php echo $this->Form->input('username');
-        	echo $this->Form->input('password');
-        	echo $this->Form->input('role', array(
-            	'options' => array('admin' => 'Admin', 'author' => 'Author')
-        	));
-    		?>
-    	</fieldset>
+<?php echo $this->Form->create('User');
 
-	<?php echo $this->Form->end(__('Submit'));?> 
-</div>
+echo $this->Form->input('username');
+echo $this->Form->input('password');
+echo $this->Form->input('role', array('options' => array('admin' => 'Admin', 'author' => 'Author')));
 
+echo $this->Form->end(__('Submit'));
+
+?>

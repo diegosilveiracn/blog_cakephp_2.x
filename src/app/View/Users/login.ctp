@@ -1,10 +1,11 @@
-<?php echo $this->Session->flash('auth'); ?>
-<?php echo $this->Form->create('User');?>
+<?php 
+echo $this->Session->flash('auth');
 
+echo $this->Form->create('User');
 
-        <?php echo $this->Form->input('username');
-        echo $this->Form->input('password');
-    ?>
+echo $this->Form->input('username');
+echo $this->Form->input('password');
 
-<?php echo $this->Form->end(__('Login'));?>
+echo $this->Form->end(__('Login'));
+?>
 
