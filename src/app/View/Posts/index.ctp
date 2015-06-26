@@ -1,7 +1,14 @@
-<!-- File: /app/View/Posts/index.ctp -->
-
 <h1>Posts do Blog</h1>
-<p><?php echo $this->Html->link("Add Post", array('action' => 'add')); ?></p>
+
+<p>
+
+<?php echo $this->Html->link("Add Post", array('action' => 'add')); ?> |
+
+<?php echo $this->Html->link('User', array('controller' => 'users' ,'action' => 'index'));?> |
+
+<?php echo $this->Html->link('Logout', array('controller' => 'users' ,'action' => 'logout'));?>
+
+</p>
 
 <table>
     <tr>

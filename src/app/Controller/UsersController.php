@@ -4,7 +4,8 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add');
+        
+        $this->Auth->allow('add', 'logout');
     }
 
     public function index() {
@@ -67,11 +68,13 @@ class UsersController extends AppController {
     }
 
     public function login() {
-        if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
-        } else {
-            $this->Session->setFlash(__('Invalid username or password, try again'));
-        }
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Auth->login()) {
+				$this->redirect($this->Auth->redirect());
+			} else {
+				$this->Session->setFlash(__('Invalid username or password, try again'));
+			}
+		}
     }
 
     public function logout() {
